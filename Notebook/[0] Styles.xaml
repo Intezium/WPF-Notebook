@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary x:Key="Style_Default"  Source="[1] Style_Default.xaml"/>
+
+    <ResourceDictionary x:Key="Style_Quad" Source="[2] Style_Quad.xaml"/>
+    
+    <ResourceDictionary x:Key="Style_Ellipse"  Source="[3] Style_Ellipse.xaml"/>
+
+</ResourceDictionary>

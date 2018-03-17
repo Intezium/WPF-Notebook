@@ -1,9 +1,19 @@
 ﻿<Application x:Class="Notebook.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:Notebook"
              StartupUri="MainWindow.xaml">
+    
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="[0] Styles.xaml"/>
+                <ResourceDictionary Source="Style_Button.xaml"/>
+                <ResourceDictionary Source="Style_TextBox.xaml"/>
+                <ResourceDictionary Source="Style_ListBox.xaml"/>
+                <ResourceDictionary Source="Style_ComboBox.xaml"/>
+                <ResourceDictionary Source="Style_ScrollBar.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
+    
 </Application>

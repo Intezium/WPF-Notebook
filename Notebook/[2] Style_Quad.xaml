@@ -1,0 +1,17 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+
+    <Style TargetType="Label">
+        <Setter Property="Foreground" Value="WhiteSmoke"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+    </Style>
+
+    <Style TargetType="Button" BasedOn="{StaticResource Quad_Button}"/>
+    <Style TargetType="TextBox" BasedOn="{StaticResource Quad_TextBox}"/>
+    <Style TargetType="ListBox" BasedOn="{StaticResource Quad_ListBox}"/>
+    <Style TargetType="ListBoxItem" BasedOn="{StaticResource Quad_ListBoxItem}"/>
+    <Style TargetType="ComboBox" BasedOn="{StaticResource Quad_ComboBox}"/>
+    <Style TargetType="ComboBoxItem" BasedOn="{StaticResource Quad_ComboBoxItem}"/>
+    <Style TargetType="ScrollBar" BasedOn="{StaticResource Quad_ScrollBar}"/>
+
+</ResourceDictionary>

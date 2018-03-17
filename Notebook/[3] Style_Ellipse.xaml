@@ -1,0 +1,17 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+
+    <Style TargetType="Label">
+        <Setter Property="Foreground" Value="WhiteSmoke"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+    </Style>
+    
+    <Style TargetType="Button" BasedOn="{StaticResource Ellipse_Button}"/>
+    <Style TargetType="TextBox" BasedOn="{StaticResource Ellipse_TextBox}"/>
+    <Style TargetType="ListBox" BasedOn="{StaticResource Ellipse_ListBox}"/>
+    <Style TargetType="ListBoxItem" BasedOn="{StaticResource Ellipse_ListBoxItem}"/>
+    <Style TargetType="ComboBox" BasedOn="{StaticResource Ellipse_ComboBox}"/>
+    <Style TargetType="ComboBoxItem" BasedOn="{StaticResource Ellipse_ComboBoxItem}"/>
+    <Style TargetType="ScrollBar" BasedOn="{StaticResource Ellipse_ScrollBar}"/>
+
+</ResourceDictionary>

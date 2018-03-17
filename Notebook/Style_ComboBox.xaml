@@ -1,0 +1,219 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush x:Key="Foreground" Color="WhiteSmoke"/>
+    <SolidColorBrush x:Key="Background" Color="Gray"/>
+
+    <SolidColorBrush x:Key="BorderBrush" Color="Black"/>
+
+    <Style x:Key="Quad_ComboBox" TargetType="ComboBox">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ComboBox">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="17"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="17"/>
+                        </Grid.ColumnDefinitions>
+                        <Popup 
+                            IsOpen="{TemplateBinding ComboBox.IsDropDownOpen}"
+                            MinWidth="{TemplateBinding FrameworkElement.ActualWidth}"
+                            MaxHeight="{TemplateBinding ComboBox.MaxDropDownHeight}"
+                            PopupAnimation="Slide" 
+                            AllowsTransparency="True">
+                            <Border 
+                                Background="Black"
+                                BorderBrush="{StaticResource BorderBrush}"
+                                BorderThickness="1">
+                                <ScrollViewer CanContentScroll="False">
+                                    <ItemsPresenter KeyboardNavigation.DirectionalNavigation="Contained" />
+                                </ScrollViewer>
+                            </Border>
+                        </Popup>
+                        <ToggleButton
+                            ClickMode="Press"
+                            IsChecked="{Binding Path=IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                            Background="{StaticResource Background}"
+                            BorderBrush="{StaticResource BorderBrush}"
+                            BorderThickness="1"
+                            Grid.ColumnSpan="3">
+                            <ToggleButton.Style>
+                                <Style TargetType="ToggleButton">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="ToggleButton">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition/>
+                                                        <ColumnDefinition Width="17"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Border 
+                                                        Background="Black"
+                                                        BorderBrush="{StaticResource BorderBrush}"
+                                                        BorderThickness="1"
+                                                        Grid.ColumnSpan="2">
+                                                        <Border
+                                                            Name="Border"                            
+                                                            Opacity="0.5"
+                                                            Background="{StaticResource Background}"/>
+                                                    </Border>
+                                                    <Path 
+                                                        Fill="{StaticResource Foreground}"                            
+                                                        Data="M0,0 L4,4 L8,0 Z"
+                                                        Grid.Column="1"                                
+                                                        VerticalAlignment="Center" 
+                                                        HorizontalAlignment="Center"/>
+                                                </Grid>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter TargetName="Border" Property="Opacity" Value="1"/>
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </ToggleButton.Style>
+                        </ToggleButton>
+                        <ContentPresenter
+                            Content="{TemplateBinding ComboBox.SelectionBoxItem}"
+                            Grid.Column="1"
+                            IsHitTestVisible="False"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"
+                            TextBlock.Foreground="{StaticResource Foreground}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Quad_ComboBoxItem" TargetType="ComboBoxItem">
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ComboBoxItem">
+                    <Grid>
+                        <Border 
+                            Name="Border"
+                            Opacity="0.5" 
+                            Background="{StaticResource Background}"/>
+                        <ContentPresenter
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center" 
+                            TextBlock.Foreground="{StaticResource Foreground}"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Opacity" Value="1"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="Ellipse_ComboBox" TargetType="ComboBox">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ComboBox">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="17"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="17"/>
+                        </Grid.ColumnDefinitions>
+                        <Popup
+                            IsOpen="{TemplateBinding ComboBox.IsDropDownOpen}"
+                            MinWidth="{TemplateBinding FrameworkElement.ActualWidth}"
+                            MaxHeight="{TemplateBinding ComboBox.MaxDropDownHeight}"
+                            PopupAnimation="Slide" 
+                            AllowsTransparency="True">
+                            <ScrollViewer CanContentScroll="False">
+                                <ItemsPresenter KeyboardNavigation.DirectionalNavigation="Contained" />
+                            </ScrollViewer>
+                        </Popup>
+                        <ToggleButton
+                            ClickMode="Press"
+                            IsChecked="{Binding Path=IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                            Background="{StaticResource Background}"
+                            BorderBrush="{StaticResource BorderBrush}"
+                            BorderThickness="1"
+                            Grid.ColumnSpan="3">
+                            <ToggleButton.Style>
+                                <Style TargetType="ToggleButton">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="ToggleButton">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition/>
+                                                        <ColumnDefinition Width="17"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Ellipse Fill="Black" Grid.ColumnSpan="2"/>
+                                                    <Ellipse
+                                                        Fill="{StaticResource Background}"
+                                                        Name="Border"
+                                                        Stroke="{StaticResource BorderBrush}"
+                                                        Opacity="0.5"
+                                                        StrokeThickness="1"
+                                                        Grid.ColumnSpan="2"/>
+                                                    <Path 
+                                                        Fill="{StaticResource Foreground}"                            
+                                                        Data="M0,0 L4,4 L8,0 Z"
+                                                        Grid.Column="1"                                
+                                                        VerticalAlignment="Center" 
+                                                        HorizontalAlignment="Center"/>
+                                                </Grid>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter TargetName="Border" Property="Opacity" Value="1"/>
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </ToggleButton.Style>
+                        </ToggleButton>
+                        <ContentPresenter
+                            Content="{TemplateBinding ComboBox.SelectionBoxItem}"
+                            Grid.Column="1"
+                            IsHitTestVisible="False"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"
+                            TextBlock.Foreground="{StaticResource Foreground}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Ellipse_ComboBoxItem" TargetType="ComboBoxItem">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ComboBoxItem">
+                    <Grid>
+                        <Ellipse Fill="Black"/>
+                        <Ellipse 
+                            Fill="{StaticResource Background}" 
+                            Name="Border" 
+                            Stroke="Black"
+                            Opacity="0.5"
+                            StrokeThickness="1"/>
+                        <ContentPresenter 
+                            Margin="3" 
+                            VerticalAlignment="Center" 
+                            HorizontalAlignment="Center" 
+                            TextBlock.Foreground="{StaticResource Foreground}"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Opacity" Value="1"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>
